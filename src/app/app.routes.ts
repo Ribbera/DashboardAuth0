@@ -1,7 +1,12 @@
 import { Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { HomeComponent } from './pages/home/home.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { notFoundComponent } from './pages/404/404.component';
+
 
 export const routes: Routes = [
-  { path: 'dashboard', component: DashboardComponent }, // Default route
-  { path: '**', redirectTo: '' } // Wildcard route for a 404 page
+  { path: '', component: HomeComponent, pathMatch: 'full' }, // Default route
+  { path: 'home', component: HomeComponent },
+  { path: 'dashboard', component: DashboardComponent }, 
+  { path: '**', component: notFoundComponent } // Wildcard route for a 404 page
 ];
